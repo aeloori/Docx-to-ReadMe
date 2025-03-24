@@ -44,6 +44,7 @@ Copy code
 
 source venv/bin/activate ```
 
+
 Once activated, your terminal should show the virtual environment’s name (e.g., (venv)).
 
 Step 2: Place the DOCX File
