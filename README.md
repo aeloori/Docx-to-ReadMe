@@ -32,17 +32,12 @@ Activate the virtual environment:
 
 *  Windows:
 
-``` Copy code
 
-venv\Scripts\activate ```
+  ` venv\Scripts\activate `
 
 *  MacOS/Linux:
 
-``` bash
-
-Copy code
-
-source venv/bin/activate ```
+  ` source venv/bin/activate `
 
 
 Once activated, your terminal should show the virtual environment’s name (e.g., (venv)).
@@ -59,11 +54,7 @@ After activating the virtual environment and placing your demo.docx file in the 
 
 Run the Python script: In the terminal (with the virtual environment active), run the following command:
 
-``` nginx
-
-Copy code
-
-python App.py ```
+  ` python App.py`
 
 The script will process the demo.docx file, extract the content (headings, bullet points, paragraphs), and save it as a README.md file in the same folder.
 
