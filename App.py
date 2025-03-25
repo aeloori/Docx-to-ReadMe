@@ -5,17 +5,45 @@ import os
 
 
 global markdown_content
+global export_file_name
 
-print("Ensure program folder contains demo.docx and delete README.md to avoid confusion \n")
+
+print("Ensure program folder contains demo.docx and delete README.md to avoid confusion ")
 
 def checkfile(doc_path):
     return os.path.isfile(doc_path)
 
+# def exportFile:
+#     retun export_file_name
+
+def checkArguments():
+    args=[]
+    if(len(sys.argv)>0):
+        args=sys.argv
+    
+    return args
+
 def initialize():
     doc=None
-    if(len(sys.argv)>1):
-        print("Selected "+sys.argv[1]+" File")
-        doc=Document(sys.argv[1])
+    args=checkArguments()
+    if(len(args)==2):
+        print(args[1])
+        if(os.path.isfile(args[1])):
+
+            doc=Document(str(args[1]))
+            print("Input file is set to ",args[1])
+        else:
+            print("No input file found named ",args[1])
+            print("Please check file is present or not and retry again")
+            exit()
+    
+    elif(len(args)==3):
+        doc=Document(str(args[1]))
+        export_file_name=args[2]
+    
+    elif(len(args)>3):
+        print("Too many arguments")
+
     else:
         if(checkfile('demo.docx')):
             doc=Document('demo.docx')
@@ -52,10 +80,16 @@ def formateList(paragraph):
 
 def saveMd(content):
     try:
-        file_output=open("README.md",'w')
-        file_output.write(markdown_content)
-        file_output.close()
-        print("Write readme file success")
+        if(len(sys.argv)==3):
+            file_output=open(sys.argv[2],'w')
+            file_output.write(markdown_content)
+            file_output.close()
+            print("Write readme file success")
+        else:
+            file_output=open(export_file_name,'w')
+            file_output.write(markdown_content)
+            file_output.close()
+            print("Write readme file success")
     except Exception as e:
         print(e)
     
