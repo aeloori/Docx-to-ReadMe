@@ -13,9 +13,6 @@ print("Ensure program folder contains demo.docx and delete README.md to avoid co
 def checkfile(doc_path):
     return os.path.isfile(doc_path)
 
-# def exportFile:
-#     retun export_file_name
-
 def checkArguments():
     args=[]
     if(len(sys.argv)>0):
@@ -27,8 +24,12 @@ def initialize():
     doc=None
     args=checkArguments()
     if(len(args)==2):
-        print(args[1])
-        if(os.path.isfile(args[1])):
+        if(args[1]=="--help"):
+            with open('help.txt','r') as text_file:
+                print(text_file.read())
+                text_file.close()
+            exit()
+        elif(os.path.isfile(args[1])):
 
             doc=Document(str(args[1]))
             print("Input file is set to ",args[1])

@@ -1,0 +1,33 @@
+
+##############################################################################################################
+
+First way to run this App
+-------------------------
+* Paste your README text containing file into root
+* Rename it with demo.docx
+* Execute by running ~ python App.py ~ inside the root directory
+* README.md file will be generated in the root directory
+
+Second way to run this App- if you want to run the app with out renaming your file
+-----------------------------------------------------------------------------------
+* Paste your docx file inside the root directory.
+* Execute by running ~ python App.py your_file_name.docx ~ inside the root directory
+* README.md file will be generated in the root directory
+
+note:
+-----
+* file format should be mentioned in the argument.
+* file name should not contains spaces in between.
+
+Third way to run this App - if you want to run with out renaming docx file and also set output file a desired name
+------------------------------------------------------------------------------------------------------------------
+* Execute by running ~ python App.py your_file_name.docx desired_name_for_outputfile.md~ inside the root directory
+
+note:
+-----
+* file format for both import and exported files, should be mentioned in the argument.
+* file name should not contains spaces in between.
+
+if you are facing any error drop a main to aeloorirevanthkumar@gmail.com
+
+##############################################################################################################
